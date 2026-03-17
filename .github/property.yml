@@ -27,11 +27,7 @@ jobs:
 
       - name: Run Validation Script
         run: |
-          # Check karte hain files kahan hain
-          ls -R .github/
-          
           # Dummy file create karo
           python -c "import h5py; import numpy as np; f = h5py.File('material_test.out', 'w'); g = f.create_group('src_0'); g.create_dataset('Ez', data=np.sin(np.linspace(0, 10, 100))); f.close()"
-          
-          # Script chalao (Direct path use karke)
+          # Script chalao
           python .github/check_property.py --input material_test.out --threshold 0.01
