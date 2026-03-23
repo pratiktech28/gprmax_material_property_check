@@ -10,23 +10,19 @@ def get_nrmse(sim_data, ref_data):
     rmse = np.sqrt(np.mean((sim_data - ref_data)**2))
     data_range = np.max(ref_data) - np.min(ref_data)
     
-    # Zero division check (just in case)
     if data_range == 0:
         return rmse
         
     return rmse / data_range
 
 def main():
-    # Description ko ekdum simple rakha hai taaki Python 3.14 crash na ho
     parser = argparse.ArgumentParser(description='GPRMax Physics Validation Tool')
     
-    # Help strings mein koi complex characters nahi hain
     parser.add_argument('--input', type=str, required=True, 
                         help='Input HDF5 file path')
     parser.add_argument('--threshold', type=float, default=0.01, 
                         help='Maximum allowed NRMSE error')
 
-    # Agar koi argument na ho, toh help print kare
     if len(sys.argv) == 1:
         parser.print_help()
         sys.exit(1)
@@ -36,16 +32,13 @@ def main():
     try:
         # 1. Load Data
         with h5py.File(args.input, 'r') as f:
-            # Note: Path apne gprMax output ke hisab se check kar lena (e.g., 'src_0/Ez')
             if 'src_0/Ez' in f:
                 sim_trace = f['src_0/Ez'][:]
             else:
-                # Agar path alag hai toh pehla available trace le lo
                 first_key = list(f.keys())[0]
                 sim_trace = f[first_key + '/Ez'][:]
 
-        # 2. Reference Data (Ideal Physics)
-        # Yahan hum analytical model use karenge. Abhi ke liye sample data hai.
+        # 2. Reference Data 
         ref_trace = np.sin(np.linspace(0, 10, len(sim_trace))) 
 
         # 3. Calculation
