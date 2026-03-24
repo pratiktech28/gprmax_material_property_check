@@ -24,6 +24,7 @@ To quantify the reliability of the simulations, I have implemented a validation 
 **Precision Threshold**: A strict 0.01 (1%) threshold is defined. Any simulation exceeding this error margin triggers an automatic failure in the CI/CD pipeline.
 
 <img width="249" height="132" alt="image" src="https://github.com/user-attachments/assets/b767c9d9-5235-45c7-8471-5e93b4cff61d" />
+
 <strong>
   Keys: Automated Material Property check demonstrating a perfect NRMSE of 0.000000, 
   performing well within the pre-defined 0.01 (1%) accuracy threshold for 
