@@ -1,7 +1,6 @@
 [![Material Property NRMSE Validation](https://github.com/pratiktech28/gprmax_material_property_check/actions/workflows/property.yml/badge.svg)](https://github.com/pratiktech28/gprmax_material_property_check/actions/workflows/property.yml)
 
 <img width="600" height="73" alt="download" src="https://github.com/user-attachments/assets/2fb4460a-95b9-47ec-96d2-f9a5d059bddd" />                          
-
 <img width="225" height="225" alt="download" src="https://github.com/user-attachments/assets/322d4dc7-6270-4d26-9af3-1779476417da" />
 
 
