@@ -17,7 +17,9 @@ This repository serves as an Automated Quality Assurance (QA) Gate for gprMax si
 **🧪 Mathematical Foundation**
 
 To quantify the reliability of the simulations, I have implemented a validation logic based on the Normalized Root Mean Square Error (NRMSE).
-$$NRMSE = \frac{\sqrt{\text{mean}((Simulated - Theoretical)^2)}}{\max(Theoretical) - \min(Theoretical)}$$
+
+**$$NRMSE = \frac{\sqrt{\text{mean}((Simulated - Theoretical)^2)}}{\max(Theoretical) - \min(Theoretical)}$$**
+
 **Normalized Quality Metric**: This provides a unitless reliability score, allowing for standardized testing across different material types.
 **Precision Threshold**: A strict 0.01 (1%) threshold is defined. Any simulation exceeding this error margin triggers an automatic failure in the CI/CD pipeline.
 
